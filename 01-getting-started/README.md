@@ -13,7 +13,7 @@ Here are the requirements.
 ## Steps to Deploy on Shared Hosting
 To deploy on shared hosting:
 1. Create a folder (say `crypto-hyip-online`) outside your webroot folder.
-2. Copy / upload all files in `crypto-hyip-pro` folder from your extracted archive into it.
+2. Copy / upload all files in `crypto-hyip-pro` folder from your extracted archive into it. If there is no `.env` file in the root folder, create a `.env` file and copy the contents of `.env.example` into it.
 3. Move / copy all contents from `crypto-hyip-pro/public` into your webroot folder (`public_html` or `www` depending on your hosting company).
 4. If you have purchased a theme, upload the folder to `crypto-hyip-online/themes/your-theme-name`. Also copy the `public` contents of the `public_html/themes/your-theme-name`
 5. Edit `public_html/index.php` and do the following replacements.
@@ -51,6 +51,8 @@ $app = require_once __DIR__.'/../crypto-hyip-online/bootstrap/app.php';
 
 8. Once it's done, you'll see buttons to Go to homepage or register page. The first account created will be assigned as the `admin` of the website. **Please use a very secure password here.**
 
+**Note: To make any changes after installation, locate `/.env` file and make the corrections there.** 
+
 9. Set your cron job as follows...
 ```bash
 */5 * * * * cd /path/to/your/crypto-hyip-online && /usr/local/bin/php artisan schedule:run >> /dev/null 2>&1
@@ -81,5 +83,7 @@ Almost everything in `Deploy to Shared Hosting` above applies. Take note of thes
 * Once you're done pushing the script online, visit `https://your-domain.com/install` to begin script installation.
 * Follow through the form to complete the setup. Make sure to have created an email.
 * You can set your cron jobs to run every minute. You can use all available investment settings, including `profit frequency` of `minutely`.
+
+**Note: To make any changes after installation, locate `/.env` file and make the corrections there.** 
 
 _Happy Hacking!!!_
