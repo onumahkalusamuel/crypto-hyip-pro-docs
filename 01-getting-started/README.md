@@ -47,11 +47,11 @@ $app = require_once __DIR__.'/../crypto-hyip-online/bootstrap/app.php';
 
 6. Create an email account. Take note of the `smtp` settings.
 
-6. Navigate to `https://yourdomain.com/install` to begin the installation process. Follow the guide and make replacements as necessary when it gets to Environment Variable files. Make sure to put your website address as the `APP_URL`, as well as the database details. If you purchased a new theme, update the value of current theme to `CURRENT_THEME=your-theme-name` for it to take effect. Click the button to continue.
+7. Navigate to `https://yourdomain.com/install` to begin the installation process. Fill the form with the details noted earlier. Click the button to continue. You will be taken to step 2. Click on `Continue` to begin database migration and seeding. **Note that this might take a while depending on your server**.
 
-7. Once installation is completed, you can go ahead and visit the signup page. The first account created will be assigned as the `admin` of the website. **Please use a very secure password here.**
+8. Once it's done, you'll see buttons to Go to homepage or register page. The first account created will be assigned as the `admin` of the website. **Please use a very secure password here.**
 
-8. Set your cron job as follows...
+9. Set your cron job as follows...
 ```bash
 */5 * * * * cd /path/to/your/crypto-hyip-online && /usr/local/bin/php artisan schedule:run >> /dev/null 2>&1
 
@@ -71,7 +71,6 @@ local.ERROR: The Process class relies on proc_open, which is not available on yo
 
 If that is the case, contact your hosting provider for assistance.
 
-
 You can then proceed to [Admin Documentation](../02-admin-dashboard/README.md) to learn about the admin interface.
 
 ## Steps to Deploy on VPS
@@ -80,7 +79,7 @@ Almost everything in `Deploy to Shared Hosting` above applies. Take note of thes
 * You do not need to move files from `./public/` folder. Just proceed as normal Laravel App.
 * You do not need to make changes to your `./public/index.php` file.
 * Once you're done pushing the script online, visit `https://your-domain.com/install` to begin script installation.
-* Follow through the steps and set environment variables as needed. Make sure to have created an email.
+* Follow through the form to complete the setup. Make sure to have created an email.
 * You can set your cron jobs to run every minute. You can use all available investment settings, including `profit frequency` of `minutely`.
 
 _Happy Hacking!!!_
